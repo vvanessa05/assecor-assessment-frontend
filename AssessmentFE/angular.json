@@ -16,14 +16,21 @@
       "architect": {
         "build": {
           "builder": "@angular/build:application",
-         "options": {
+          "options": {
             "outputPath": "dist/frontend-assessment",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.json",
-            "assets": ["src/public", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -75,10 +82,8 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -96,10 +101,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "schematicCollections": [
-      "angular-eslint"
-    ]
   }
 }
