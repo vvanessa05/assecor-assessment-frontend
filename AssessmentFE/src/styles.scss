@@ -11,13 +11,66 @@ html {
   ));
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--gap_small);
+  color: var(--color_primary);
+  text-decoration: none;
+  position: relative;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: var(--medium);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color_primary);
+  font-size: var(--medium);
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+  transform-origin: center;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
 :root {
-  --logo_path: "app/src/assets/images/logo.png";
-
-  --navbar_height: 40px;
-  --default_gap: 20px;
+  /* Layout Sizes */
+  --navbar_height: 110px;
   --logo_height: 100px;
+  --footer_height: 40px;
+  --content_width: 1200px;
 
-  // Colors
-  --color_primary: #261957;
+  --gap_small: 8px;
+  --default_gap: 20px;
+  --default_padding: 20px;
+  --default_padding_2: calc(var(--default_padding) * 2);
+  --default_padding_3: calc(var(--default_padding) * 3);
+  --default_padding_4: calc(var(--default_padding) * 4);
+
+  /* Typography */
+  --small: 12px;
+  --medium: 16px;
+  --fs-nav: 15px;
+
+  /* Colors */
+  --color_primary: #021050ff;
+  --color_primary_light: #456cb4ff;
+  --color_secondary: #aaa5a5ff;
+
+  /* --- Animations --- */
+  --transition-fast: 0.3s ease-in-out;
 }
