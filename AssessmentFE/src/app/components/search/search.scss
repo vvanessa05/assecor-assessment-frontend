@@ -1,0 +1,9 @@
+.search{
+ margin-bottom: -1.25em;
+  width: 200px;
+}
+
+::ng-deep .mat-mdc-form-field-flex {
+  height: 40px !important;
+  align-items: center !important;
+}
