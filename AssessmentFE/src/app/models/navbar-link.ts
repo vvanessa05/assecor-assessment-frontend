@@ -1,7 +1,7 @@
 /**
  * Describes a navbar button with its properties
  */
-export interface NavbarButton {
+export interface NavbarLink {
   /**
    * The icon of the button
    */
