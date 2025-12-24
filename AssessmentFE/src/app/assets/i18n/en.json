@@ -1,0 +1,7 @@
+{
+  "GENERAL_TEXTS": {
+    "UNKNOWN_ERROR": "Unknown error",
+    "ERROR_MESSAGE": "Error: {{ message }}",
+    "ERROR_WITH_CODE": "Error code: {{ status }}\n Message: {{ message }}"
+  }
+}
