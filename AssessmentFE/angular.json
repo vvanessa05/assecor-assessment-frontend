@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AssessmentFE": {
+    "FrontendAssessment": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -16,22 +16,15 @@
       "architect": {
         "build": {
           "builder": "@angular/build:application",
-          "options": {
+         "options": {
+            "outputPath": "dist/frontend-assessment",
+            "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.scss"
-            ]
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.json",
+            "assets": ["src/public", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -61,10 +54,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "AssessmentFE:build:production"
+              "buildTarget": "FrontendAssessment:build:production"
             },
             "development": {
-              "buildTarget": "AssessmentFE:build:development"
+              "buildTarget": "FrontendAssessment:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,8 +84,22 @@
               "src/styles.scss"
             ]
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }
