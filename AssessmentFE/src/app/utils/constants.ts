@@ -5,7 +5,7 @@ import { NavbarLink } from "../models/navbar-link";
  */
 export const links: NavbarLink[] = [
   {
-    icon: "local_movie",
+    icon: "movie",
     label: "NAVBAR.MOVIES",
     route: "movies"
   },
@@ -15,8 +15,8 @@ export const links: NavbarLink[] = [
     route: "characters"
   },
   {
-    icon: "planet",
+    icon: "scatter_plot",
     label: "NAVBAR.PLANETS",
     route: "planets"
   },
-]
+];
