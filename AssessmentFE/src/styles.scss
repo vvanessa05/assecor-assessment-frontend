@@ -1,4 +1,4 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 html {
   @include mat.theme((
@@ -26,27 +26,42 @@ html, body {
   color: var(--color_primary);
   text-decoration: none;
   position: relative;
-  padding: 10px 0;
+  padding: 10px;
   cursor: pointer;
   font-size: var(--medium);
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color_primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-fast);
+    transform-origin: center;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    box-shadow: 0 0 10px 2px var(--color_primary_light);
+  }
+
+  &.selected::after {
+    transform: scaleX(1);
+    box-shadow: 0 0 10px 2px var(--color_primary_light);
+  }
 }
 
-.link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(min(var(--card_width), 100%), 1fr));
+  max-width: calc((var(--card_width) * 3) + (var(--default_gap_2) * 2));
+  gap: var(--default_gap_2);
   width: 100%;
-  height: 2px;
-  background-color: var(--color_primary);
-  font-size: var(--medium);
-  transform: scaleX(0);
-  transition: transform var(--transition-fast);
-  transform-origin: center;
-}
-
-.link:hover::after {
-  transform: scaleX(1);
+  box-sizing: border-box;
+  align-items: center;
 }
 
 :root {
@@ -57,12 +72,17 @@ html, body {
   --content_width: 1200px;
   --default_radius: 10px;
 
+  --gap_xs: calc(var(--default_gap) /4);
   --gap_small: 8px;
   --default_gap: 20px;
+  --default_gap_2: calc(var(--default_gap) *2);
   --default_padding: 20px;
   --default_padding_2: calc(var(--default_padding) * 2);
   --default_padding_3: calc(var(--default_padding) * 3);
   --default_padding_4: calc(var(--default_padding) * 4);
+
+  --card_width: 250px;
+  --card_height: calc((var(--card_width) * 2));
 
   /* Typography */
   --small: 12px;
@@ -73,6 +93,7 @@ html, body {
   --color_primary: #021050ff;
   --color_primary_light: #456cb4ff;
   --color_secondary: #aaa5a5ff;
+  --color_secondary_light: #eee9e9ea;
 
   /* --- Animations --- */
   --transition-fast: 0.3s ease-in-out;
