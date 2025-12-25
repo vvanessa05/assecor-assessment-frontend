@@ -21,19 +21,4 @@ export class NavbarButton {
    * @required
    */
   button = input.required<NavbarLink>();
-
-  /**
-   * Reactive state indicating if the button is currently hovered by the user
-   */
-  highlighted = signal(false);
-
-  @HostListener("mouseenter")
-  onMouseEnter() {
-    this.highlighted.set(true);
-  }
-
-  @HostListener("mouseleave")
-  onMouseLeave() {
-    this.highlighted.set(false);
-  }
 }
