@@ -15,7 +15,7 @@ export abstract class BaseService {
   /**
    * Base URL
    */
-  protected readonly API_ROOT = "https://swapi.py4e.com/";
+  protected readonly API_ROOT = "https://swapi.py4e.com/api/";
 
   /**
    * Endpoint, used to send the http requests
