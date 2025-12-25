@@ -33,16 +33,9 @@
         background-color: white;
         display: flex;
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
+        padding: 2rem;
 
-        .content-padding {
-          padding: 0;
-          max-width: none;
-          margin: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-        }
     }
 
     .footer {
