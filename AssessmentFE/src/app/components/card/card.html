@@ -1,0 +1,24 @@
+<div class="card-container">
+  <img [src]="item().picture" [alt]="item().title" />
+  <div class="card-content">
+    <div class="card-title">
+      {{item().title}}
+    </div>
+    <div class="card-texts">
+      @let texts = item().texts;
+      @for(text of texts; track text) {
+        <div class="text">
+          <span class="label">
+            {{text.label | translate}}
+          </span>
+          <span class="content">
+            {{text.content}}
+          </span>
+        </div>
+      }
+    </div>
+    <span class="more-infos">
+      {{"GENERAL_TEXTS.MORE_INFORMATIONS" | translate}}
+    </span>
+  </div>
+</div>
