@@ -27,11 +27,6 @@ export class NavbarButton {
    */
   highlighted = signal(false);
 
-  /**
-   * Reactive state indicating if the button corresponds to the currently active route
-   */
-  selected = signal(false);
-
   @HostListener("mouseenter")
   onMouseEnter() {
     this.highlighted.set(true);
