@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { links } from 'src/app/utils/constants';
+import { Component } from "@angular/core";
+import { links } from "src/app/utils/constants";
 import { NavbarButton } from "./navbar-button/navbar-button";
 
 @Component({
-  selector: 'app-navbar',
+  selector: "app-navbar",
   imports: [NavbarButton],
-  templateUrl: './navbar.html',
-  styleUrl: './navbar.scss',
+  templateUrl: "./navbar.html",
+  styleUrl: "./navbar.scss",
 })
 
 /**
