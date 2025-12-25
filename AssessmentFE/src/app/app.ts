@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, signal } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { RouterModule, RouterOutlet } from "@angular/router";
 import { Navbar } from "./components/navbar/navbar";
 import { Search } from "./components/search/search";
 import { MatIconModule } from "@angular/material/icon";
@@ -8,7 +8,7 @@ import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-root",
-  imports: [RouterOutlet, Navbar, Search, MatIconModule],
+  imports: [RouterOutlet, Navbar, Search, MatIconModule,RouterModule],
   templateUrl: "./app.html",
   styleUrl: "./app.scss",
 })
