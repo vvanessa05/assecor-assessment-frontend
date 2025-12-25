@@ -1,4 +1,4 @@
-<div class="link" [routerLink]="button().route" [class.highlighted]="highlighted()">
+<div class="link" [routerLink]="button().route" routerLinkActive="selected">
     <mat-icon [fontIcon]="button().icon" />
     <span class="label">{{button().label | translate}}</span>
 </div>
