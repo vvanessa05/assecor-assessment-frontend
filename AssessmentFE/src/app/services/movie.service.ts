@@ -4,7 +4,7 @@ import { BaseService } from "./base-service";
 import { HttpClient } from "@angular/common/http";
 import { TranslateService } from "@ngx-translate/core";
 import { MovieDTO } from "./../data-interfaces/movie";
-import { map, Observable } from "rxjs";
+import { forkJoin, map, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -26,7 +26,7 @@ export class Movie extends BaseService {
   /**
    * Dictionary of all movies by Id
    */
-  moviesMap = computed(() => new Map(this.allMovies().map(movie => [movie.id, movie])));
+  moviesMap = computed(() => new Map(this.allMovies().map((movie) => [movie.id, movie])));
 
   constructor(http: HttpClient, translate: TranslateService) {
     super(http, translate);
@@ -36,10 +36,12 @@ export class Movie extends BaseService {
    * Sends a request to retrieve all movies and sets the allMovies signal
    */
   getAll() {
-   this.get<{ results: any[] }>().pipe(
-      map((response) => response.results),
-      map((dtos) => dtos.map((dto) => this.mapToMovie(dto)))
-    ).subscribe(movies => this.allMovies.set(movies));
+    this.get<{ results: any[] }>()
+      .pipe(
+        map((response) => response.results),
+        map((dtos) => dtos.map((dto) => this.mapToMovie(dto)))
+      )
+      .subscribe((movies) => this.allMovies.set(movies));
   }
 
   /**
@@ -49,7 +51,18 @@ export class Movie extends BaseService {
    * @memberof Movie
    */
   getById(id: string): Observable<MovieData> {
-    return this.get<MovieDTO>(id).pipe(map(dto => this.mapToMovie(dto)))
+    return this.get<MovieDTO>(id).pipe(map((dto) => this.mapToMovie(dto)));
+  }
+
+  /**
+   * Get multiple movies by ids
+   * @param ids
+   * @returns
+   */
+  getByIds(ids: string[]): Observable<MovieData[]> {
+    const requests = ids.map((id) => this.getById(id));
+
+    return forkJoin(requests);
   }
 
   /**
@@ -77,7 +90,7 @@ export class Movie extends BaseService {
       starships: dto.starships,
       vehicles: dto.vehicles,
       species: dto.species,
-      image: `assets/images/films/${id}.jpg`
+      image: `assets/images/films/${id}.jpg`,
     };
   }
 }
