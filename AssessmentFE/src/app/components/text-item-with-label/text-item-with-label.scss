@@ -1,0 +1,16 @@
+.text {
+  display: flex;
+  grid-template-columns: auto 1fr;
+  gap: var(--gap_xs);
+  align-items: baseline;
+
+  .label {
+    font-weight: bold;
+    white-space: nowrap;
+    grid-column: 1;
+  }
+
+  .content {
+    grid-column: 2;
+  }
+}

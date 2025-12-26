@@ -12,14 +12,7 @@
     <div class="card-texts">
       @let texts = item().texts;
       @for(text of texts; track text) {
-        <div class="text">
-          <span class="label">
-            {{text.label | translate}}
-          </span>
-          <span class="content">
-            {{text.content}}
-          </span>
-        </div>
+        <app-text-item-with-label [label]="text.label" [content]="text.content" />
       }
     </div>
     <span class="more-infos">
