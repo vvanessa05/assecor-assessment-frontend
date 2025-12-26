@@ -8,6 +8,10 @@ import { forkJoin, map, Observable } from "rxjs";
 @Injectable({
   providedIn: "root",
 })
+
+/**
+ * Service to managa the starships
+ */
 export class Starship extends BaseService {
   /**
    * The endpoint for Star Wars starships
