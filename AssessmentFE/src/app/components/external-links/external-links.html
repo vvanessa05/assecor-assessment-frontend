@@ -1,0 +1,13 @@
+<div class="external-links">
+  <span class="label" (click)="toggle()">
+    {{"MOVIES.CHARACTERS" | translate}}
+    <mat-icon [class.rotated]="isOpen()">chevron_right</mat-icon>
+  </span>
+    <div class="links" [@expandCollapse]="isOpen() ? 'expanded' : 'collapsed'">
+      @for (link of links(); track link) {
+        <div class="external-link" [routerLink]="link.route">
+          {{link.label}}
+        </div>
+      }
+    </div>
+</div>
