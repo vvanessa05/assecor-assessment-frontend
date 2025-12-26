@@ -5,7 +5,9 @@
     "ERROR_WITH_CODE": "Error code: {{ status }}\n Message: {{ message }}",
     "SEARCH": "Search...",
     "MORE_INFORMATIONS": "Show more informations",
-    "BACK": "Back to overview"
+    "BACK": "Back to overview",
+    "CANCEL": "Cancel",
+    "REQUIRED_INVALID": "Please fill out this field"
   },
 
   "LABELS": {
@@ -26,6 +28,41 @@
     "DIRECTOR": "Director",
     "PRODUCER": "Producer",
     "RELEASE_DATE": "Release date",
-    "OPENING_CRAWL": "Opening crawl"
+    "OPENING_CRAWL": "Opening crawl",
+    "ACTIONS": {
+      "ADD": "Add Movie"
+    },
+    "FIELDS": {
+      "TITLE": {
+        "LABEL": "Title",
+        "PLACEHOLDER": "Insert title"
+      },
+      "DIRECTOR": {
+        "LABEL": "Director",
+        "PLACEHOLDER": "Insert director"
+      },
+      "PRODUCER": {
+        "LABEL": "Producer",
+        "PLACEHOLDER": "Select placeholder"
+      },
+      "RELEASE_DATE": {
+        "LABEL": "Release date"
+      },
+      "DESCRIPTION": {
+        "LABEL": "Description",
+        "PLACEHOLDER": "Insert description"
+      }
+    }
+  },
+  "TOASTS": {
+    "HEADER": {
+      "SUCCESS": "Success",
+      "CANCELED": "Canceled",
+      "ERROR": "Error"
+    },
+    "CONTENT": {
+      "ERROR": "Action unavailable",
+      "CANCELED": "Operation canceled by the user"
+    }
   }
 }
