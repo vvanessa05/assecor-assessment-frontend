@@ -26,7 +26,7 @@ export class Character extends BaseService {
   /**
    * Dictionary of all characters by Id
    */
-  moviesMap = computed(() => new Map(this.allCharacters().map(character => [character.id, character])));
+  charactersMap = computed(() => new Map(this.allCharacters().map(character => [character.id, character])));
 
   constructor(http: HttpClient, translate: TranslateService) {
     super(http, translate);
@@ -87,7 +87,7 @@ export class Character extends BaseService {
       starships: dto.starships,
       vehicles: dto.vehicles,
       species: dto.species,
-      image: `assets/images/people/${id}.jpg`,
+      picture: `assets/images/people/${id}.jpg`,
     };
   }
 }
