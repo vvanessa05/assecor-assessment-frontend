@@ -1,0 +1,14 @@
+<div class="overlay-wrapper">
+  @if (!applicationStateService.overlayOpen()) {
+    <button matFab class="my-custom-fab" (click)="openAddCharacterDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
+
+    <div class="cards-container">
+      @for (char of items(); track char.id) {
+        <app-card [item]="char" [routerLink]="'details/'+char.id"/>
+      }
+    </div>
+  }
+  <router-outlet />
+</div>
