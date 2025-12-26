@@ -5,7 +5,7 @@
     "ERROR_WITH_CODE": "Error code: {{ status }}\n Message: {{ message }}",
     "SEARCH": "Search...",
     "MORE_INFORMATIONS": "Show more informations",
-    "BACK": "Back to overview",
+    "BACK": "Back to previous",
     "CANCEL": "Cancel",
     "REQUIRED_INVALID": "Please fill out this field"
   },
@@ -51,6 +51,43 @@
       "DESCRIPTION": {
         "LABEL": "Description",
         "PLACEHOLDER": "Insert description"
+      }
+    }
+  },
+  "CHARACTERS": {
+    "HEIGHT": "Height",
+    "WEIGHT": "Weight",
+    "HAIR_COLOUR": "Hair colour",
+    "EYES_COLOUR": "Eyes colour",
+    "BIRTH_YEAR": "Birth year",
+    "GENDER": "Gender",
+    "ACTIONS": {
+      "ADD": "Add Character"
+    },
+    "FIELDS": {
+      "NAME": {
+        "LABEL": "Name",
+        "PLACEHOLDER": "Insert name"
+      },
+      "HEIGHT": {
+        "LABEL": "Height",
+        "PLACEHOLDER": "Meter"
+      },
+      "WEIGHT": {
+        "LABEL": "Weight",
+        "PLACEHOLDER": "Kg"
+      },
+      "HAIR_COLOUR": {
+        "LABEL": "Hair colour"
+      },
+      "EYES_COLOUR": {
+        "LABEL": "Eyes colour"
+      },
+      "BIRTH_YEAR": {
+        "LABEL": "Birth year"
+      },
+      "GENDER": {
+        "LABEL": "Gender"
       }
     }
   },
