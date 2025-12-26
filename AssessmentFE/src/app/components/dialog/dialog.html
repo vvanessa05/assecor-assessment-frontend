@@ -1,0 +1,22 @@
+<h2 class="title" mat-dialog-title>{{ data.header | translate}}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="form" class="dialog-layout">
+    @for (field of data.fields; track field.label) {
+    <app-input-field [field]="field" [control]="getControl(field.key)" />
+    }
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="buttons">
+  <button class="button-cancel" (click)="onCancel()">
+    <mat-icon>cancel</mat-icon>
+    {{"GENERAL_TEXTS.CANCEL" | translate}}
+  </button>
+  <button class="button-primary" [disabled]="form.invalid" (click)="onSave()">
+    @if (data.submitIcon) {
+    <mat-icon>{{ data.submitIcon }}</mat-icon>
+    }
+    {{ data.submitLabel | translate}}
+  </button>
+</mat-dialog-actions>
