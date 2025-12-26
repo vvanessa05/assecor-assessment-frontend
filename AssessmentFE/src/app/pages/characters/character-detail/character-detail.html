@@ -1,0 +1,26 @@
+<app-overlay>
+  @let char = character();
+  @if(char) {
+    <div class="detail-container">
+      <div class="detail-title">{{char.name}}</div>
+      <div class="detail-content">
+        <div class="left">
+          <app-text-item-with-label label="CHARACTERS.HEIGHT" [content]="char.height" />
+          <app-text-item-with-label label="CHARACTERS.WEIGHT" [content]="char.mass" />
+          <app-text-item-with-label label="CHARACTERS.HAIR_COLOUR" [content]="char.hairColor" />
+          <app-text-item-with-label label="CHARACTERS.EYES_COLOUR" [content]="char.eyeColor" />
+          <app-text-item-with-label label="CHARACTERS.BIRTH_YEAR" [content]="char.birthYear" />
+          <app-text-item-with-label label="CHARACTERS.GENDER" [content]="char.gender" />
+
+        </div>
+        <div class="right">
+          <img [src]="char.picture" [alt]="char.name" />
+        </div>
+        <app-external-links class="full-width-links" label="LABELS.MOVIES" [links]="moviesLinks()" />
+        <app-external-links class="full-width-links" label="LABELS.STARSHIPS" [links]="starshipsLinks()" />
+        <app-external-links class="full-width-links" label="LABELS.VEHICLES" [links]="vehiclesLinks()" />
+        <app-external-links class="full-width-links" label="LABELS.SPECIES" [links]="speciesLinks()" />
+      </div>
+    </div>
+  }
+</app-overlay>
