@@ -91,7 +91,7 @@ export class Starship extends BaseService {
       passengers: dto.passengers,
       pilots: dto.pilots,
       starshipClass: dto.starship_class,
-      image: `assets/images/films/${id}.jpg`,
+      image: `assets/images/starships/${id}.jpg`,
     };
   }
 }
