@@ -16,7 +16,7 @@ import { Starship } from "src/app/services/starship.service";
 import { StarshipData } from "src/app/data-interfaces/starship";
 import { Vehicle } from "src/app/services/vehicle.service";
 import { VehicleData } from "src/app/data-interfaces/vehicle";
-import { Specie } from "src/app/services/specie";
+import { Specie } from "src/app/services/specie.service";
 import { SpecieData } from "src/app/data-interfaces/specie";
 
 @Component({
