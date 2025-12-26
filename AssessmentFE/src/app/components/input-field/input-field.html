@@ -1,0 +1,26 @@
+<mat-form-field appearance="outline" style="width: 100%;">
+  <mat-label>{{ field().label }}</mat-label>
+
+  @if (isTextArea()) {
+    <textarea matInput [formControl]="control()" [placeholder]="field().placeholder || ''"></textarea>
+  }
+
+  @if (isStandardInput()) {
+    <input matInput
+           [type]="field().type"
+           [formControl]="control()"
+           [placeholder]="field().placeholder || ''">
+  }
+
+  @if (isSelection()) {
+    <mat-select [formControl]="control()">
+      @for (option of field().options; track option.value) {
+        <mat-option [value]="option.value">{{ option.label }}</mat-option>
+      }
+    </mat-select>
+  }
+
+  @if (control().invalid && control().touched) {
+    <mat-error>Campo non valido</mat-error>
+  }
+</mat-form-field>
