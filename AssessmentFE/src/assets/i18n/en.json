@@ -4,7 +4,8 @@
     "ERROR_MESSAGE": "Error: {{ message }}",
     "ERROR_WITH_CODE": "Error code: {{ status }}\n Message: {{ message }}",
     "SEARCH": "Search...",
-    "MORE_INFORMATIONS": "Show more informations"
+    "MORE_INFORMATIONS": "Show more informations",
+    "BACK": "Back to overview"
   },
   "NAVBAR": {
     "HOME": "Home",
@@ -15,6 +16,8 @@
   "MOVIES": {
     "DIRECTOR": "Director",
     "PRODUCER": "Producer",
-    "RELEASE_DATE": "Release date"
+    "RELEASE_DATE": "Release date",
+    "CHARACTERS": "Characters",
+    "PLANETS": "Planets"
   }
 }
