@@ -16,7 +16,6 @@ box-sizing: border-box;
 }
 
 .external-link {
-  margin-top: var(--default_gap);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +24,6 @@ box-sizing: border-box;
   border-radius: 10px;
   text-decoration: none;
   background-color: #f8f9fa;
-  color: #000;
   text-align: center;
   min-height: 50px;
 
