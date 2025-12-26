@@ -22,8 +22,27 @@
     color: var(--color_primary);
     background: var(--color_secondary_light);
 
+    .icons {
+      margin-top: auto;
+      align-self: flex-end;
+      display: flex;
+      gap: var(--gap_xs);
+
+      mat-icon {
+        cursor: pointer;
+      }
+
+      .star:hover, .edit:hover {
+        color: var(--color_primary_light)
+      }
+
+      .delete:hover {
+        color: var(--red)
+      }
+    }
     .card-title {
       font-size: large;
+      flex-wrap: wrap;
       font-weight: bold;
     }
 

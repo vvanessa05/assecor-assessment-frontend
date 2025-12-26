@@ -1,6 +1,11 @@
 <div class="card-container">
   <img [src]="item().picture" [alt]="item().title" />
   <div class="card-content">
+    <div class="icons">
+      <mat-icon class="star">star</mat-icon>
+      <mat-icon class="edit">edit</mat-icon>
+      <mat-icon class="icon delete">delete</mat-icon>
+    </div>
     <div class="card-title">
       {{item().title}}
     </div>
