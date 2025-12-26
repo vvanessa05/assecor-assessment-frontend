@@ -2,10 +2,13 @@ import { Component, computed, OnInit } from "@angular/core";
 import { Movie } from "src/app/services/movie.service";
 import { Card } from "src/app/components/card/card";
 import { ItemData } from "src/app/models/card-data";
+import { MatIconModule } from "@angular/material/icon";
+import { RouterModule } from "@angular/router";
+import { ApplicationStateService } from "src/app/services/application-state.service";
 
 @Component({
   selector: "app-movies",
-  imports: [Card],
+  imports: [Card,  MatIconModule, RouterModule],
   templateUrl: "./movies.html",
   styleUrl: "./movies.scss",
 })
@@ -20,6 +23,7 @@ export class Movies implements OnInit {
   items = computed<ItemData[]>(() => {
     const movies = this.movieService.allMovies();
     return movies.map((mov) => ({
+      id: mov.id ?? "",
       picture: mov.image,
       title: mov.title,
       texts: [
@@ -39,7 +43,7 @@ export class Movies implements OnInit {
     }));
   });
 
-  constructor(private movieService: Movie) {}
+  constructor(private movieService: Movie, readonly applicationStateService: ApplicationStateService) {}
 
   /**
    * Init the movies to display

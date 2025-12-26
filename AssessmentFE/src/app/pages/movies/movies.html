@@ -1,5 +1,14 @@
-<div class="cards-container">
-  @for (movie of items(); track movie) {
-    <app-card [item]="movie" />
+<div class="overlay-wrapper">
+  @if (!applicationStateService.overlayOpen()) {
+    <button matFab class="my-custom-fab">
+      <mat-icon>add</mat-icon>
+    </button>
+
+    <div class="cards-container">
+      @for (movie of items(); track movie.id) {
+        <app-card [item]="movie" [routerLink]="'details/'+movie.id"/>
+      }
+    </div>
   }
+  <router-outlet />
 </div>
