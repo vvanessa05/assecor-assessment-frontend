@@ -1,5 +1,5 @@
 import { Component, computed, HostListener, inject, input, signal } from "@angular/core";
-import { NavbarLink } from "../../../models/navbar-link";
+import { NavbarLink } from "../../../models/link";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { MatIconModule } from "@angular/material/icon";
