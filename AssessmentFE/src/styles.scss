@@ -71,7 +71,69 @@ body {
   align-items: center;
 }
 
+.my-custom-fab {
+  position: fixed;
+  z-index: 1000;
+  bottom: 30px;
+  right: 30px;
+  width: 70px !important;
+  height: 70px !important;
+  background-color: var(--color_primary);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    bottom: 20px;
+    right: 20px;
+    width: 56px !important;
+    height: 56px !important;
+
+    mat-icon {
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+.my-custom-fab {
+  position: fixed !important;
+  top: 50%;
+  right: 2rem;
+  z-index: 1000;
+  margin: 0 !important;
+}
+
+.my-custom-fab:hover {
+  transform: scale(1.1);
+  background-color: var(--color_primary);
+}
+
+.my-custom-fab mat-icon {
+  color: white;
+}
+
+
+.overlay-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--default_padding);
+}
+
 :root {
+  @include mat.fab-overrides((container-color: var(--color_primary),
+      container-elevation-shadow: -4px -4px 5px 0px var(--color_primary),
+    ));
   /* Layout Sizes */
   --navbar_height: 110px;
   --logo_height: 100px;
