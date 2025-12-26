@@ -18,6 +18,9 @@ export class Movie extends BaseService {
    */
   protected endpoint = "films/";
 
+  /**
+   * List containing all movies
+   */
   allMovies = signal<MovieData[]>([]);
 
   /**
@@ -31,7 +34,6 @@ export class Movie extends BaseService {
 
   /**
    * Sends a request to retrieve all movies and sets the allMovies signal
-   * @memberof Movie
    */
   getAll() {
    this.get<{ results: any[] }>().pipe(
