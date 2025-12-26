@@ -1,6 +1,6 @@
 <div class="external-links">
   <span class="label" (click)="toggle()">
-    {{"MOVIES.CHARACTERS" | translate}}
+    {{label() | translate}}
     <mat-icon [class.rotated]="isOpen()">chevron_right</mat-icon>
   </span>
     <div class="links" [@expandCollapse]="isOpen() ? 'expanded' : 'collapsed'">
