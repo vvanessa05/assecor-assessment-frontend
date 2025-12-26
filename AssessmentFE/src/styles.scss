@@ -17,6 +17,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  color: var(--color_primary_light);
 }
 
 .label {
@@ -129,6 +130,110 @@ body {
   width: 100%;
   min-height: 100vh;
   padding: var(--default_padding);
+}
+
+.button-primary, .button-cancel {
+  white-space: nowrap;
+  min-width: fit-content;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px !important;
+  height: 40px;
+  border-color: var(--color_primary) !important;
+  border-radius: var(--default_radius);
+  color: var(--color_primary) !important;
+
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+
+  mat-icon {
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    filter: grayscale(0.5);
+    border-color: var(--color_secondary) !important;
+    color: var(--color_secondary) !important;
+    background-color: var(--color_secondary_light) !important;
+
+    &:hover {
+      color: var(--color_secondary) !important;
+      background-color: var(--color_secondary_light) !important;
+      box-shadow: none;
+      transform: none;
+    }
+  }
+
+  &:hover {
+    background-color: var(--color_primary) !important;
+    color: white !important;
+    box-shadow: 0 0 15px var(--color_primary);
+    transform: translateX(-5px);
+  }
+}
+
+.button-cancel {
+border-color: var(--color_primary) !important;
+  color: var(--color_primary) !important;
+    background-color: white !important;
+
+}
+
+.detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+
+  .detail-title {
+    text-align: center;
+    font-size: xx-large;
+    color: var(--color_primary);
+    font-weight: bolder;
+  }
+
+  .detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: calc((var(--card_width) * 3) + (var(--default_gap_2) * 2));
+    gap: var(--default_gap);
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+
+    margin-top: 3rem;
+
+    .left {
+      display: grid;
+      gap: var(--gap_xs);
+
+    }
+
+    .right {
+      justify-self: center;
+      width: 100%;
+      max-width: 400px;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--default_radius);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .full-width-links {
+      grid-column: 1 / span 2;
+      width: 100%;
+    }
+  }
 }
 
 :root {
