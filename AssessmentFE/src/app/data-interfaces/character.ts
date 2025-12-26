@@ -1,4 +1,4 @@
-import { Base } from "./base";
+import { Base } from './base';
 
 /**
  * Describes a charachter data transfer object from SWAPI
@@ -31,11 +31,10 @@ export interface CharacterInterface extends Base {
   eyeColor: string;
   birthYear: string;
   gender: string;
-  image: string;
-   homeworld: string;
+  picture: string;
+  homeworld: string;
   films: string[];
   species: string[];
   vehicles: string[];
   starships: string[];
-
 }
