@@ -7,6 +7,14 @@
     "MORE_INFORMATIONS": "Show more informations",
     "BACK": "Back to overview"
   },
+
+  "LABELS": {
+    "MOVIES": "Movies",
+    "CHARACTERS": "Characters",
+    "PLANETS": "Planets",
+    "STARSHIPS": "Starships",
+    "VEHICLES": "Vehicles"
+  },
   "NAVBAR": {
     "HOME": "Home",
     "MOVIES": "Movies",
@@ -16,8 +24,6 @@
   "MOVIES": {
     "DIRECTOR": "Director",
     "PRODUCER": "Producer",
-    "RELEASE_DATE": "Release date",
-    "CHARACTERS": "Characters",
-    "PLANETS": "Planets"
+    "RELEASE_DATE": "Release date"
   }
 }
