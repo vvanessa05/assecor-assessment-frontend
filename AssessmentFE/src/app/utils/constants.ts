@@ -1,3 +1,4 @@
+import { Option } from "../models/input-field";
 import { NavbarLink } from "../models/link";
 
 /**
@@ -24,4 +25,19 @@ export const links: NavbarLink[] = [
     label: "NAVBAR.PLANETS",
     route: "/planets"
   },
+];
+
+/**
+ * Producer items for dropdowns
+ */
+export const producersItems: Option[] = [
+  { label: "Gary Kurtz", value: 0 },
+  { label: "Rick McCallum", value: 1 },
+  { label: "Howard G.", value: 2 },
+  { label: "Kazanjian", value: 3 },
+  { label: "George Lucas", value: 4 },
+  { label: "Rick McCallum", value: 5 },
+  { label: "Kathleen Kennedy", value: 6 },
+  { label: "J. J. Abrams", value: 7 },
+  { label: "Bryan Burk", value: 8 },
 ];
