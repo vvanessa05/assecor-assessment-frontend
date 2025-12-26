@@ -1,4 +1,4 @@
-import { NavbarLink } from "../models/navbar-link";
+import { NavbarLink } from "../models/link";
 
 /**
  * Containts the links for the navbar
