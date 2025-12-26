@@ -1,6 +1,6 @@
 <div class="overlay-wrapper">
   @if (!applicationStateService.overlayOpen()) {
-    <button matFab class="my-custom-fab">
+    <button matFab class="my-custom-fab" (click)="openAddFilmDialog()">
       <mat-icon>add</mat-icon>
     </button>
 

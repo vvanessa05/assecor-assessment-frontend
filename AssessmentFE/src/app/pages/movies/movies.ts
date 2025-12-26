@@ -5,10 +5,14 @@ import { ItemData } from "src/app/models/card-data";
 import { MatIconModule } from "@angular/material/icon";
 import { RouterModule } from "@angular/router";
 import { ApplicationStateService } from "src/app/services/application-state.service";
+import { DialogService } from "src/app/services/dialog-service";
+import { DialogData } from "src/app/models/dialog-data";
+import { InputValueType } from "src/app/utils/enums";
+import { producersItems } from "src/app/utils/constants";
 
 @Component({
   selector: "app-movies",
-  imports: [Card,  MatIconModule, RouterModule],
+  imports: [Card, MatIconModule, RouterModule],
   templateUrl: "./movies.html",
   styleUrl: "./movies.scss",
 })
@@ -43,7 +47,56 @@ export class Movies implements OnInit {
     }));
   });
 
-  constructor(private movieService: Movie, readonly applicationStateService: ApplicationStateService) {}
+  dialogData: DialogData = {
+    header: "MOVIES.ACTIONS.ADD",
+    submitIcon: "check",
+    submitLabel: "MOVIES.ACTIONS.ADD",
+    fields: [
+      {
+        key: "title",
+        label: "MOVIES.FIELDS.TITLE.LABEL",
+        placeholder: "MOVIES.FIELDS.TITLE.PLACEHOLDER",
+        required: true,
+        type: InputValueType.Text,
+        errorText: "GENERAL_TEXTS.REQUIRED_INVALID",
+      },
+      {
+        key: "director",
+        label: "MOVIES.FIELDS.DIRECTOR.LABEL",
+        placeholder: "MOVIES.FIELDS.DIRECTOR.PLACEHOLDER",
+        required: false,
+        type: InputValueType.Text,
+      },
+      {
+        key: "producer",
+        label: "MOVIES.FIELDS.PRODUCER.LABEL",
+        placeholder: "MOVIES.FIELDS.PRODUCER.PLACEHOLDER",
+        options: producersItems,
+        required: false,
+        type: InputValueType.Selection,
+      },
+      {
+        key: "releaseDate",
+        label: "MOVIES.FIELDS.RELEASE_DATE.LABEL",
+        placeholder: "",
+        required: false,
+        type: InputValueType.Date,
+      },
+      {
+        key: "description",
+        label: "MOVIES.FIELDS.DESCRIPTION.LABEL",
+        placeholder: "MOVIES.FIELDS.DESCRIPTION.PLACEHOLDER",
+        required: false,
+        type: InputValueType.TextArea,
+      },
+    ],
+  };
+
+  constructor(
+    private movieService: Movie,
+    readonly applicationStateService: ApplicationStateService,
+    private dialogService: DialogService
+  ) {}
 
   /**
    * Init the movies to display
@@ -52,5 +105,9 @@ export class Movies implements OnInit {
     if (!this.movieService.allMovies().length) {
       this.movieService.getAll();
     }
+  }
+
+  openAddFilmDialog() {
+    this.dialogService.openDialog(this.dialogData);
   }
 }
