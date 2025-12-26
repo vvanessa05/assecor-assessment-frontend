@@ -41,3 +41,24 @@ export const producersItems: Option[] = [
   { label: "J. J. Abrams", value: 7 },
   { label: "Bryan Burk", value: 8 },
 ];
+
+/**
+ * Color items for dropdowns
+ */
+export const colors: Option[] = [
+  { label: "Yellow", value: 0 },
+  { label: "Black", value: 1 },
+  { label: "White", value: 2 },
+  { label: "Grey", value: 3 },
+  { label: "Brown", value: 4 },
+];
+
+/**
+ * Gender items for dropdowns
+ */
+export const gender: Option[] = [
+  { label: "Male", value: 0 },
+  { label: "Female", value: 1 },
+  { label: "Divers", value: 2 }
+]
+
