@@ -18,6 +18,10 @@ export interface TextData {
  */
 export interface ItemData {
   /**
+   * Id of the movie
+   */
+  id: string;
+  /**
    * The path of the image to display
    */
   picture: string;
