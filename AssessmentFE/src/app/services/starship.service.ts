@@ -3,7 +3,7 @@ import { BaseService } from "./base-service";
 import { StarshipData, StarshipDTO } from "./../data-interfaces/starship";
 import { HttpClient } from "@angular/common/http";
 import { TranslateService } from "@ngx-translate/core";
-import { map, Observable } from "rxjs";
+import { forkJoin, map, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",
