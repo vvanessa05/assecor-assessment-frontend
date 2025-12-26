@@ -18,6 +18,14 @@ body {
   overflow-x: hidden;
 }
 
+.label {
+  display: flex;
+  gap: var(--gap_xs);
+  color: var(--color_primary);
+  font-size: large;
+  font-weight: bold;
+}
+
 .link {
   display: flex;
   align-items: center;
