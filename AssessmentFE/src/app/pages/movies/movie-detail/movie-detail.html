@@ -1,0 +1,29 @@
+<app-overlay>
+  @let movie = film();
+  @if(movie) {
+    <div class="detail-container">
+      <div class="detail-title">{{movie.title}}</div>
+      <div class="detail-content">
+        <div class="left">
+          <app-text-item-with-label label="MOVIES.DIRECTOR" [content]="movie.director" />
+          <app-text-item-with-label label="MOVIES.PRODUCER" [content]="movie.producer" />
+          <app-text-item-with-label label="MOVIES.RELEASE_DATE" [content]="movie.releaseDate" />
+          <div class="opening-crawl">
+            <div class="label">{{"MOVIES.OPENING_CRAWL" | translate}}</div>
+            <span>
+              {{movie.openingCrawl}}
+            </span>
+          </div>
+        </div>
+        <div class="right">
+          <img [src]="movie.image" [alt]="movie.title" />
+        </div>
+        <app-external-links class="full-width-links" label="LABELS.CHARACTERS" [links]="charactersLinks()" />
+        <app-external-links class="full-width-links" label="LABELS.PLANETS" [links]="planetsLinks()" />
+        <app-external-links class="full-width-links" label="LABELS.STARSHIPS" [links]="starshipsLinks()" />
+        <app-external-links class="full-width-links" label="LABELS.VEHICLES" [links]="vehiclesLinks()" />
+        <app-external-links class="full-width-links" label="LABELS.SPECIES" [links]="speciesLinks()" />
+      </div>
+    </div>
+  }
+</app-overlay>
