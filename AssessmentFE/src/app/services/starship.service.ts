@@ -52,6 +52,17 @@ export class Starship extends BaseService {
   }
 
   /**
+   * Get multiple starships by ids
+   * @param {string[]} ids
+   * @returns {Observable<StarshipData[]>}
+   */
+  getByIds(ids: string[]): Observable<StarshipData[]> {
+    const requests = ids.map((id) => this.getById(id));
+
+    return forkJoin(requests);
+  }
+
+  /**
    * Mapping converts raw backend data (DTO) into the internal data model (Interface).
    * This ensures decoupling between external APIs and application logic,
    * allowing keys to be normalised (from snake_case to camelCase)
