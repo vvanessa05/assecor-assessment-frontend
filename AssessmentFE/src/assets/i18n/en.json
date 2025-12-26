@@ -13,7 +13,8 @@
     "CHARACTERS": "Characters",
     "PLANETS": "Planets",
     "STARSHIPS": "Starships",
-    "VEHICLES": "Vehicles"
+    "VEHICLES": "Vehicles",
+    "SPECIES": "Species"
   },
   "NAVBAR": {
     "HOME": "Home",
@@ -24,6 +25,7 @@
   "MOVIES": {
     "DIRECTOR": "Director",
     "PRODUCER": "Producer",
-    "RELEASE_DATE": "Release date"
+    "RELEASE_DATE": "Release date",
+    "OPENING_CRAWL": "Opening crawl"
   }
 }
