@@ -107,6 +107,9 @@ export class Movies implements OnInit {
     }
   }
 
+  /**
+   * Open the dialog to add a new film
+   */
   openAddFilmDialog() {
     this.dialogService.openDialog(this.dialogData);
   }
